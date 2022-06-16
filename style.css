@@ -1,0 +1,472 @@
+
+/* TEKST */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 .nav, .p{
+  
+    font-family: 'Encode Sans', sans-serif;
+ 
+
+    }
+.thin{
+font-weight: 100 !important;
+}
+
+.regular{
+    font-weight: 400 !important;
+}
+
+.bold{
+    font-weight: 600 !important;
+}
+
+.orange{
+    color: #EF6535 !important;
+}
+.row2{
+    flex-wrap: wrap;
+    display: flex;
+}
+strong{
+    color: #EF6535 !important;
+}
+
+.white{
+    color: #F7E4E4 !important;
+}
+
+body { background: rgb(247, 228, 228) !important; } 
+
+/* TEKST */
+
+/*container*/
+.container1 {
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 1268px) {
+  .container1 {
+    width: 1250px;
+  }
+}
+@media (min-width: 1492px) {
+  .container1 {
+    width: 1370px;
+  }
+}
+@media (min-width: 1700px) {
+  .container1 {
+    width: 1570px;
+  }
+}
+/*container*/
+
+/*varvid*/
+.video{
+    background-color: #1B1A17;
+}
+
+
+.taust{
+    background-image: url('assets/taustad/taust.png');
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover ;
+}
+
+.taust2{
+    background-image: url('assets/taustad/taust2.png');
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover ;
+    
+}
+/*varvid*/
+
+/*carousel*/
+
+  
+  /* Slider */
+  .slick-slide {
+      margin: 0px 20px;
+  }
+  
+  .slick-slide img {
+      width: 100%;
+  }
+  
+  .slick-slider
+  {
+      position: relative;
+      display: block;
+      box-sizing: border-box;
+  
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+  
+      -webkit-touch-callout: none;
+      -khtml-user-select: none;
+      -ms-touch-action: pan-y;
+          touch-action: pan-y;
+      -webkit-tap-highlight-color: transparent;
+  }
+  
+  .slick-list
+  {
+      position: relative;
+      display: block;
+      overflow: hidden;
+  
+      margin: 0;
+      padding: 0;
+  }
+  .slick-list:focus
+  {
+      outline: none;
+  }
+  .slick-list.dragging
+  {
+      cursor: pointer;
+      cursor: hand;
+  }
+  
+  .slick-slider .slick-track,
+  .slick-slider .slick-list
+  {
+      -webkit-transform: translate3d(0, 0, 0);
+         -moz-transform: translate3d(0, 0, 0);
+          -ms-transform: translate3d(0, 0, 0);
+           -o-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+  }
+  
+  .slick-track
+  {
+      position: relative;
+      top: 0;
+      left: 0;
+  
+      display: block;
+  }
+  .slick-track:before,
+  .slick-track:after
+  {
+      display: table;
+  
+      content: '';
+  }
+  .slick-track:after
+  {
+      clear: both;
+  }
+  .slick-loading .slick-track
+  {
+      visibility: hidden;
+  }
+  
+  .slick-slide
+  {
+      display: none;
+      float: left;
+  
+      height: 100%;
+      min-height: 1px;
+  }
+  [dir='rtl'] .slick-slide
+  {
+      float: right;
+  }
+  .slick-slide img
+  {
+      display: block;
+  }
+  .slick-slide.slick-loading img
+  {
+      display: none;
+  }
+  .slick-slide.dragging img
+  {
+      pointer-events: none;
+  }
+  .slick-initialized .slick-slide
+  {
+      display: block;
+  }
+  .slick-loading .slick-slide
+  {
+      visibility: hidden;
+  }
+  .slick-vertical .slick-slide
+  {
+      display: block;
+  
+      height: auto;
+  
+
+  }
+  .slick-arrow.slick-hidden {
+      display: none;
+  }
+/*carousel*/
+/* galerii*/
+.nupp{
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none !important; 
+    color: #EF6535;
+    border: 1px solid #EF6535;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+  }
+  
+  .nupp .nupp2{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .nupp:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #EF6535;
+    transition: all .65s;
+  }
+  
+  .nupp:hover{
+    color: #fff;
+  }
+  
+  .nupp:hover:after{
+    width: 100%;
+  }
+
+  .sek2{
+      background-color: #371B58;
+  }
+ 
+.pilt{
+    display: flex;
+    justify-content: center;
+} 
+
+
+  .hovereffect img {
+    display: block;
+    position: relative;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+  
+  .hovereffect:hover img {
+
+
+   
+  
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15);
+  }
+  
+/*galerii*/
+.grow {
+    -webkit-transition-duration: 0.3s;
+transition-duration: 0.3s;
+-webkit-transition-property: transform;
+transition-property: transform;
+-webkit-transform: translateZ(0);
+transform: translateZ(0);
+
+}
+.grow:hover, .grow:focus, .grow:active {
+-webkit-transform: scale(1.1);
+transform: scale(1.1);
+}
+
+
+.hideme
+{
+    opacity:0;
+}
+
+
+.get-in-touch {
+    max-width: 800px;
+    margin: 50px auto;
+    position: relative;
+  
+  }
+  .get-in-touch .title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 3.2em;
+    line-height: 48px;
+    padding-bottom: 48px;
+      
+  }
+  
+  .contact-form .form-field {
+    
+    position: relative;
+    margin: 32px 0;
+  }
+  .contact-form .input-text {
+    background-color : #f7e3e3; 
+    display: block;
+    width: 100%;
+    height: 36px;
+    border-width: 0 0 2px 0;
+    border-color: #EF6535;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+  }
+  .contact-form .input-text:focus {
+    outline: none;
+  }
+  .contact-form .input-text:focus + .label,
+  .contact-form .input-text.not-empty + .label {
+    -webkit-transform: translateY(-24px);
+            transform: translateY(-24px);
+  }
+  .contact-form .label {
+    position: absolute;
+    left: 20px;
+    bottom: 11px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #EF6535;
+    cursor: text;
+    transition: -webkit-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    transition: transform .2s ease-in-out, 
+    -webkit-transform .2s ease-in-out;
+  }
+  .contact-form .submit-btn {
+    display: inline-block;
+    background-color: #000;
+   
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    width:200px;
+    cursor: pointer;
+  }
+  
+  
+
+  /* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.footer{
+padding-top:5rem;
+
+}
+@media only screen and (max-width: 600px) {
+  .footer {
+   padding-top: 20%;
+   padding-bottom: 10%;
+    
+}
+}
+@media only screen and (min-width: 1000px) {
+  .footer {
+    padding-top:5rem;
+    padding-bottom: 5%;
+  }
+}
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
