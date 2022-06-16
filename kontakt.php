@@ -1,28 +1,75 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<?php
+/*
+ *  CONFIGURE EVERYTHING HERE
+ */
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+// an email address that will be in the From field of the email.
+$from = 'seiusiim.raidaru@gmail.com';
 
-    <title>Hello, world!</title>
-    </head>
-    <body>
-    <main>
-        <p>Send mail</p>
-        <form class="contact-form" action="kontakt2.php" method="post">
-            <input type="text" name="name" placeholder="full name">
-            <input type="text" name="mail" placeholder="your e-mail">
-            <input type="text" name="subject" placeholder="subject">
-            <textarea name="message"  placeholder="message"></textarea>
-            <button type="submit" name="submit">SEND MAIL</button>
-        </form>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-</html>
+// an email address that will receive the email with the output of the form
+$sendTo = 'seiusiim.raidaru@gmail.com';
+
+// subject of the email
+$subject = 'New message from contact form';
+
+// form field names and their translations.
+// array variable name => Text to appear in the email
+$fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'message' => 'Message'); 
+
+// message that will be displayed when everything is OK :)
+$okMessage = 'Sõnum saadetud! Vastan teile peagi. :)';
+
+// If something goes wrong, we will display this message.
+$errorMessage = 'Midagi läks valesti :(';
+
+/*
+ *  LET'S DO THE SENDING
+ */
+
+// if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
+error_reporting(E_ALL & ~E_NOTICE);
+
+try
+{
+
+    if(count($_POST) == 0) throw new \Exception('Form is empty');
+            
+    $emailText = "You have a new message from your contact form\n=============================\n";
+
+    foreach ($_POST as $key => $value) {
+        // If the field exists in the $fields array, include it in the email 
+        if (isset($fields[$key])) {
+            $emailText .= "$fields[$key]: $value\n";
+        }
+    }
+
+    // All the necessary headers for the email.
+    $headers = array('Content-Type: text/plain; charset="UTF-8";',
+        'From: ' . $from,
+        'Reply-To: ' . $_POST['email'],
+        'Return-Path: ' . $from,
+    );
+    
+    // Send email
+    mail($sendTo, $subject, $emailText, implode("\n", $headers));
+
+    $responseArray = array('type' => 'success', 'message' => $okMessage);
+}
+catch (\Exception $e)
+{
+    $responseArray = array('type' => 'danger', 'message' => $errorMessage);
+}
+
+
+// if requested by AJAX request return JSON response
+if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+    $encoded = json_encode($responseArray);
+
+    header('Content-Type: application/json');
+
+    echo $encoded;
+}
+// else just display the message
+else {
+    echo $responseArray['message'];
+}
